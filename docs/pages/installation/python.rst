@@ -97,6 +97,23 @@ You can then install pywavemap with incremental rebuilds using::
       cd ~/wavemap/library/python
       pip3 install --no-build-isolation -ve .
 
+`-e` または `--editable`
+意味: editable（開発）モードでインストールする。
+効果: 現在のディレクトリ（.）をシンボリックリンクのように扱い、pip install後もソースを変更すれば即時に反映される。
+用途: 開発中のライブラリをインストールする場合に使う。
+
+`-v` または `--verbose`
+意味: 詳細なログを表示する。
+効果: ビルドやインストール時の詳細なメッセージが見られるので、デバッグに便利。
+
+`--no-build-isolation`
+意味: ビルドのために隔離された仮想環境（build isolation）を使わない。
+効果: pyproject.toml に記載された依存関係を事前にインストールせず、現在の環境のパッケージだけでビルドを試みる。
+
+` .（ドット）`
+意味: 現在のディレクトリ（＝パッケージのルート）。
+
+
 When you change wavemap's code, the command above must manually be rerun to reinstall the updated package. For a more interactive experience, you can use::
 
       cd ~/wavemap/library/python
